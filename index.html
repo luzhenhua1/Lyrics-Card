@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lyrics Card Generator - Apple Music Style</title>
+  <link rel="stylesheet" href="style.css?v=2.0" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+  <!-- 主容器：Apple 风格的分栏布局 -->
+  <div class="app-container">
+    <!-- 左侧输入面板 -->
+    <div class="input-panel">
+      <div class="panel-header">
+        <h1 class="app-title">Lyrics Card</h1>
+        <p class="app-subtitle">Create beautiful lyric cards in Apple Music style</p>
+      </div>
+
+      <div class="input-sections">
+        <!-- 歌词输入区 -->
+        <div class="input-section">
+          <label class="section-label">Lyrics</label>
+          <textarea
+            id="lyricsInput"
+            class="lyrics-textarea"
+            placeholder="Enter your lyrics here..."
+            maxlength="500">哥穿着复古西装
+拿着手杖 弹着魔法乐章
+漫步走在 莎玛丽丹
+被岁月 翻新的时光
+望不到边界的帝国</textarea>
+        </div>
+
+        <!-- 歌曲信息区 -->
+        <div class="input-section">
+          <label class="section-label">Song Information</label>
+          <div class="song-inputs">
+            <input
+              type="text"
+              id="songInput"
+              class="text-input"
+              placeholder="Song title"
+              value="最伟大的作品">
+            <input
+              type="text"
+              id="artistInput"
+              class="text-input"
+              placeholder="Artist name"
+              value="周杰伦">
+            <input
+              type="text"
+              id="albumInput"
+              class="text-input"
+              placeholder="Album name"
+              value="最伟大的作品">
+          </div>
+        </div>
+
+        <!-- 封面上传区 -->
+        <div class="input-section">
+          <label class="section-label">Cover Image</label>
+          <div class="cover-upload">
+            <input type="file" id="coverInput" accept="image/*" class="cover-file-input">
+            <div class="cover-upload-area" id="coverUploadArea">
+              <div class="cover-upload-content">
+                <svg class="upload-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7,10 12,15 17,10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span class="upload-text">Click to upload or drag and drop</span>
+                <span class="upload-hint">PNG, JPG up to 10MB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 底部操作区 -->
+      <div class="panel-footer">
+        <button class="export-btn" id="exportBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7,10 12,15 17,10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Export as Image
+        </button>
+
+        <button class="share-btn" id="shareBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Share Link
+        </button>
+      </div>
+
+      <!-- 作者信息区域 -->
+      <div class="author-info">
+        <div class="author-links">
+          <a href="https://luzhenhua.cn/" target="_blank" rel="noopener noreferrer" class="author-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            卢振华
+          </a>
+          <span class="divider">•</span>
+          <a href="https://github.com/luzhenhua1/LyricsCard" target="_blank" rel="noopener noreferrer" class="author-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧预览面板 -->
+    <div class="preview-panel">
+      <div class="preview-container">
+        <div class="preview-label">Preview</div>
+
+        <!-- 音乐卡片预览 -->
+        <div class="card" id="card">
+          <div class="lyrics">
+            哥穿着复古西装<br />
+            拿着手杖 弹着魔法乐章<br />
+            漫步走在 莎玛丽丹<br />
+            被岁月 翻新的时光<br />
+            望不到边界的帝国
+          </div>
+
+          <div class="infobar">
+            <div class="left">
+              <div class="titleArtist">
+                <div class="song">最伟大的作品</div>
+                <div class="artist">周杰伦</div>
+              </div>
+
+              <div class="brand">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16.365 13.17c-.026-2.785 2.28-4.12 2.387-4.19-1.305-1.91-3.337-2.174-4.056-2.203-1.725-.176-3.37 1.014-4.244 1.014-.89 0-2.23-.993-3.676-.964-1.89.028-3.64 1.097-4.609 2.786-1.979 3.427-.506 8.49 1.423 11.27.944 1.36 2.06 2.89 3.53 2.84 1.43-.058 1.97-.914 3.7-.914 1.72 0 2.23.914 3.72.886 1.54-.03 2.52-1.38 3.46-2.74 1.09-1.6 1.53-3.16 1.55-3.24-.034-.016-2.98-1.144-3.185-4.24z" />
+                  <path d="M13.77 5.27c.77-.93 1.29-2.23 1.15-3.53-1.11.05-2.45.74-3.24 1.66-.71.83-1.34 2.16-1.17 3.43 1.24.1 2.5-.63 3.26-1.56z" />
+                </svg>
+                <span>Music</span>
+              </div>
+            </div>
+
+            <div class="album" style="display: none;">最伟大的作品</div>
+          </div>
+
+          <!-- 右下角专辑封面 -->
+          <div class="corner-album-cover" id="cornerAlbumCover" style="display: block;">
+            <div class="cover-placeholder" style="display: none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.6">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <img class="cover-image" src="fengmian.webp" style="display: block;" alt="Album Cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/colorthief/dist/color-thief.umd.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
