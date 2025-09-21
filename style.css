@@ -330,6 +330,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* 给右侧封面预留空间，防止文字被遮挡 */
+  margin-right: 70px;
 }
 
 .card .titleArtist {
