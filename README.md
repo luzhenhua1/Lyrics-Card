@@ -1,6 +1,12 @@
 # Lyrics Card Generator
 
+[简体中文](README.md) | [English](README_EN.md)
+
 一个仿 Apple Music 风格的歌词卡片生成器，灵感来源于 iMessage 中分享歌词时的精美卡片样式。
+
+## 📸 演示
+
+![Demo Screenshot](demo.png)
 
 ## ✨ 特性
 
